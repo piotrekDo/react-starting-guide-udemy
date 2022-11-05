@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './ExpenseItem.css';
 
 export default function ExpenseItem() {
   return (
-    <div>
-      <div>Date</div>
-      <div><h2>Title</h2></div>
-      <div>Ammount</div>
+    <div className="expense-item">
+      <div>March 28th 2022</div>
+      <div className='expense-item__description'>
+        <h2>Car insurance</h2>
+        <div className='expense-item__price'>432.43</div>
+      </div>
     </div>
-  )
+  );
 }
