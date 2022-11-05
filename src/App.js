@@ -1,4 +1,6 @@
+import Card from './components/Card';
 import ExpenseItem from './components/ExpenseItem';
+import './components/Expenses.css'
 
 function App() {
   const expenses = [
@@ -24,11 +26,11 @@ function App() {
   ];
 
   return (
-    <div>
-      <h2>Let's get started!</h2>
+    <Card className="expenses">
+    <h2>Let's get started!</h2>
       {expenses.map((expense) => {
         return (
-          <ExpenseItem
+            <ExpenseItem
             id={expense.id}
             name={expense.title}
             amount={expense.amount}
@@ -36,7 +38,7 @@ function App() {
           />
         );
       })}
-    </div>
+    </Card>
   );
 }
 
