@@ -3,6 +3,7 @@ import Card from './components/UI/Card';
 import './components/expenses/Expenses.css';
 import ExpenseItem from './components/expenses/ExpenseItem';
 import NewExpense from './components/NewExpense/NewExpense';
+import { useState } from 'react';
 
 function App() {
   const expenses = [
@@ -26,10 +27,16 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const [expensesData, addExpense] = useState(expenses);
+
+  const addNewExpenseHandler = (newExpense) => {
+      console.log(newExpense)
+      addExpense(expensesData.push(newExpense));
+  }
 
   return (
     <Card className="expenses">
-      <NewExpense/>
+      <NewExpense onNewExpenseAdded={addNewExpenseHandler}/>
       {expenses.map((expense) => {
         return (
           <ExpenseItem
