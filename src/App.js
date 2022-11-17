@@ -29,6 +29,7 @@ function App() {
   ];
   const [expensesData, addExpense] = useState(expenses);
   const [filteredYear, changeYear] = useState('2021');
+  
 
   const addNewExpenseHandler = (newExpense) => {
     console.log(newExpense);
